@@ -1,0 +1,13 @@
+{
+  "manifest_version": 2,
+
+  "name": "SFDC Id Conversion Tool",
+  "description": "Converts 15 Case Sentive Id to 18 Digit case insentive Id",
+  "version": "1.0",
+
+  "browser_action": { // We can probably do with Page_Action ones I'm able to pull 15 Digit Id from URL , but we can check later
+    "default_icon": "icon.png", // Need a better Image 
+    "default_title":"SFDC Id coverter",
+    "default_popup": "popup.html"
+  }
+}

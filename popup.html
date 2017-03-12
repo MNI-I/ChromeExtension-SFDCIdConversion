@@ -1,0 +1,54 @@
+<!doctype html>
+<!--
+ This page is shown when the extension button is clicked, because the
+ "browser_action" field in manifest.json contains the "default_popup" key with
+ value "popup.html".
+ -->
+<html>
+
+  
+  <head>
+    <script type="text/javascript">
+
+function convert() 
+{
+  var Id = document.getElementById('IdToConvert').value;
+  if(Id.length == 15){
+   for(var i=0;i<3;i++)
+   {
+    var temp = 0;
+    var temp1=0
+     for(var j=0;j<5;j++)
+     {
+       var c = Id.charAt(i*5+j);
+        if ( c >='A' && c <='Z')
+        {
+            temp +=1<<j; 
+            //temp +=Math.pow(2,j); 
+             window.alert(temp);
+        }
+     }
+     temp1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ012345".charAt(temp);
+     window.alert(temp1);
+     Id = Id + temp1;
+     window.alert(Id);
+   }
+  }
+  else
+  {
+     window.alert("Bad Error");
+  }
+  convertedId.innerHTML  = a;            
+}
+</script>
+    <title>SFDC 15 Digit Id to 18 Digit Id Converter</title>
+    </head>
+    <body>
+    <div id="form">
+        15 Digit Id: <input type="text" id="IdToConvert" value="text here" maxlength="15"> 
+        <input type="button" name="btn" value="Convert" onclick="convert()">
+    <!--<p id="demo"></p>-->
+<p>18 Digit ID: <span id="convertedId"></span></p>
+    </div>
+</body>
+</html>
